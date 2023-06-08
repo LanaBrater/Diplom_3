@@ -21,14 +21,12 @@ public class DriverUtil {
             if (driver == null) {
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
                 ChromeOptions options = new ChromeOptions();
-                options.setBinary("C:\\Users\\brate\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe");
+                options.setBinary(System.getenv("YANDEX_HOME"));
                 driver = new ChromeDriver(options);
-
             }
         }
         return driver;
     }
-
 
     public static void deleteDriver() {
         driver = null;
